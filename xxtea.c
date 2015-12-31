@@ -45,7 +45,7 @@
 #define XFREE(o) do { if ((o) == NULL) ; else free(o); } while (0)
 
 #define DELTA 0x9e3779b9
-#define MX (((z>>5^y<<2) + (y>>3^z<<4)) ^ ((sum^y) + (key[(p&3)^e] ^ z)))
+#define MX (((((int32_t)z>>5)^y<<2) + (((int32_t)y>>3)^z<<4)) ^ ((sum^y) + (key[(p&3)^e] ^ z)))
 
 static PyObject *module, *binascii;
 static PyObject *_xxtea_pyunicode_hexlify;
